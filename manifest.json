@@ -1,0 +1,18 @@
+{
+  "name": "twx-quotes-restorer",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "引用ツイート表示をワンクリックでできる様にする",
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://*.twitter.com/*", "https://*.x.com/*"]
+    }
+  ],
+  "content_scripts": [{
+    "matches": ["https://*.twitter.com/*", "https://*.x.com/*"],
+    "js": ["content.js"],
+    "runAt": "document_end",
+    "all_frames": true
+    }]
+  }
